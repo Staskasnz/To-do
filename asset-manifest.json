@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/Staskasnz/To-do.git/static/css/main.7bae7380.css",
+    "main.js": "/Staskasnz/To-do.git/static/js/main.9d4b2d91.js",
+    "static/media/LichtePostBusPro.ttf": "/Staskasnz/To-do.git/static/media/LichtePostBusPro.f39f428dbfe10794d9d6.ttf",
+    "static/media/Inter-Medium.woff2": "/Staskasnz/To-do.git/static/media/Inter-Medium.293fd13dbca5a3e450ef.woff2",
+    "static/media/Inter-Black.woff2": "/Staskasnz/To-do.git/static/media/Inter-Black.15ca31c0a2a68f76d2d1.woff2",
+    "static/media/Inter-Regular.woff2": "/Staskasnz/To-do.git/static/media/Inter-Regular.c8ba52b05a9ef10f4758.woff2",
+    "static/media/complate-button.png": "/Staskasnz/To-do.git/static/media/complate-button.1e2db174bf9552fd048d.png",
+    "static/media/delete-button.png": "/Staskasnz/To-do.git/static/media/delete-button.3f4ab66af00b3492f85d.png",
+    "static/media/off.png": "/Staskasnz/To-do.git/static/media/off.d8ed836a90ce86d80be8.png",
+    "index.html": "/Staskasnz/To-do.git/index.html",
+    "main.7bae7380.css.map": "/Staskasnz/To-do.git/static/css/main.7bae7380.css.map",
+    "main.9d4b2d91.js.map": "/Staskasnz/To-do.git/static/js/main.9d4b2d91.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7bae7380.css",
+    "static/js/main.9d4b2d91.js"
+  ]
+}
