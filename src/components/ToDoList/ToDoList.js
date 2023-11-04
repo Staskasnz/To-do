@@ -65,14 +65,11 @@ function ToDoList() {
     function handleDeleteInput(id) {
         console.log(todos);
         const updatedTodos = { ...todos };
-        const updatedComplatedInputs = { ...complatedInputs };
 
         delete updatedTodos[id];
-        delete updatedComplatedInputs[id];
 
         setTodos(updatedTodos);
-        setComplatedinputs(updatedComplatedInputs);
-        localStorage.setItem('complatedInputs', JSON.stringify(updatedComplatedInputs));
+        localStorage.setItem('todos', JSON.stringify(updatedTodos));
     }
 
     function handleComplateInput(id) {
