@@ -1,0 +1,192 @@
+.header {
+    display: flex;
+}
+
+.header__title {
+    font-family: 'LichtePostBusPro';
+    /* font-size: 55px; */
+    color: white;
+    margin: 0;
+    margin-top: 500px;
+    text-shadow: 5px 5px 2px rgb(0, 0, 0, .3);
+    cursor: pointer;
+    transition: all .15s ease;
+    animation: jump 7s linear infinite ;
+}
+
+.header__title:hover {
+    text-shadow: 3px 3px 1px rgb(0, 0, 0, .3);
+    padding: 1.5px 0 0 1.5px;
+}
+
+.header__title:active {
+    text-shadow: 0px 0px 4px rgb(0, 0, 0, .3);
+    padding: 2px 0 0 2px;
+}
+
+.header__title_to-top {
+    font-family: 'LichtePostBusPro';
+    letter-spacing: 5px;
+    color: white;
+    margin: 0;
+    margin-top: 60px;
+    margin-left: 8px;
+    font-size: 65px;
+    transition: all .15s ease;
+    text-shadow: 5px 5px 10px rgb(0, 0, 0, .3);
+}
+
+.header__off-button {
+    max-height: 40px;
+    opacity: .5;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    transition: all .2s ease;
+    cursor: pointer;
+}
+
+.header__off-button:hover {
+    opacity: 1;
+}
+
+.header__change-color-box {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    min-width: 40px;
+    min-height: 40px;
+}
+
+.header__change-color-box:hover {
+    min-height: 240px;
+}
+
+.header__change-color-button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 40px;
+    min-height: 40px;
+    border-radius: 50%;
+    border: 1px solid #adadad;
+    cursor: pointer;
+    background-image: url(../../images/1.png);
+    background-size: cover;
+    animation: button-move-around 55s linear infinite, button-change-color 45s linear infinite alternate;
+    transition: all .2s ease;
+    opacity: .9;
+}
+
+.header__change-color-box:hover .header__change-color-button {
+    border: 1px solid #929292;
+    opacity: 1;
+    animation: button-change-color 45s linear infinite alternate;
+}
+
+.header__change-color-1,
+.header__change-color-2,
+.header__change-color-3,
+.header__change-color-4 {
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    min-width: 36px;
+    min-height: 36px;
+    border-radius: 50%;
+    border: 1px solid #adadad;
+    cursor: pointer;
+    background-image: url(../../images/1.png);
+    background-size: cover;
+    transition: all .2s ease;
+    opacity: 0;
+    z-index: -1;
+}
+
+.header__change-color-2 {
+    background-image: url(../../images/2.png);
+}
+
+.header__change-color-3 {
+    background-image: url(../../images/3.png);
+}
+
+.header__change-color-4 {
+    background-image: url(../../images/4.png);
+}
+
+.header__change-color-box:hover .header__change-color-1 {
+    top: 50px;
+    opacity: 1;
+    z-index: 2;
+}
+
+.header__change-color-box:hover .header__change-color-2 {
+    top: 100px;
+    opacity: 1;
+    z-index: 2;
+}
+
+.header__change-color-box:hover .header__change-color-3 {
+    top: 150px;
+    opacity: 1;
+    z-index: 2;
+}
+
+.header__change-color-box:hover .header__change-color-4 {
+    top: 200px;
+    opacity: 1;
+    z-index: 2;
+}
+
+.header__change-color-1:hover,
+.header__change-color-2:hover,
+.header__change-color-3:hover,
+.header__change-color-4:hover {
+    transform: scale(1.2);
+
+    transition: all .1s ease;
+}
+
+@keyframes button-move-around {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+
+}
+
+@keyframes button-change-color {
+
+    0%,
+    100% {
+        background-image: url(../../images/1.png);
+    }
+
+    25% {
+        background-image: url(../../images/2.png);
+    }
+
+    50% {
+        background-image: url(../../images/3.png);
+    }
+
+    75% {
+        background-image: url(../../images/4.png);
+    }
+}
+
+@keyframes jump {
+    0%, 4%, 8%, 100% {
+      transform: translateY(0); 
+    }
+    2% {
+      transform: translateY(-15px);
+    }
+    6% {
+      transform: translateY(-7px);
+    }
+  }

@@ -1,0 +1,29 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+    transition: all ease 1s;
+}
+
+.overlay__color-1 {
+    background-image: linear-gradient(to top, rgba(55, 236, 186, .6) 0%, rgba(114, 175, 211, .6) 100%);
+    transition: all ease 1s;
+}
+
+.overlay__color-2 {
+    background-image: linear-gradient(60deg, rgb(41, 50, 60) 0%, rgb(72, 85, 99) 100%);
+    transition: all ease 1s;
+}
+
+.overlay__color-3 {
+    background-image: linear-gradient(to bottom, rgb(172, 203, 238) 0%, rgb(231, 240, 253) 100%);
+    transition: all ease 1s;
+}
+
+.overlay__color-4 {
+    background-image: linear-gradient(to top, rgb(255 238 231) 0%, rgb(136 206 239) 100%);
+    transition: all ease 1s;
+}
