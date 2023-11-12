@@ -3,7 +3,6 @@ import Header from "./Header/Header";
 import OverlayColor from "./OverlayColor/OverlayColor";
 import ToDoList from "./ToDoList/ToDoList";
 
-
 function App() {
   const [showContent, setShowContent] = useState(false);
   const [numberOverlayColor, setNumberOverlayColor] = useState('1');

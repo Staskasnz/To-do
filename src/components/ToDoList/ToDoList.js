@@ -1,7 +1,9 @@
-import { useEffect, useState } from 'react';
-import './ToDoList.css'
-import deleteButton from '../../images/delete-button.png'
-import complateButton from '../../images/complate-button.png'
+import React, { useEffect, createRef, useState, useRef } from 'react';
+import './ToDoList.css';
+import deleteButton from '../../images/delete-button.png';
+import complateButton from '../../images/complate-button.png';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
+
 
 
 function ToDoList() {
@@ -13,9 +15,11 @@ function ToDoList() {
     const [todoInput, setTodoInput] = useState('');
     const [todos, setTodos] = useState([]);
     const [todoCounter, setTodoCounter] = useState(0);
+    const inputRef = useRef(null)
 
     useEffect(() => {
         const savedTodos = JSON.parse(localStorage.getItem('todos'));
+        console.log(savedTodos.length);
         if (savedTodos) {
             setTodos(savedTodos);
         }
@@ -60,10 +64,10 @@ function ToDoList() {
         const updateTodos = { ...todos };
         updateTodos[index] = evt.target.value;
         setTodos(updateTodos);
+        localStorage.setItem('todos', JSON.stringify(updateTodos));
     }
 
     function handleDeleteInput(id) {
-        console.log(todos);
         const updatedTodos = { ...todos };
 
         delete updatedTodos[id];
@@ -87,10 +91,12 @@ function ToDoList() {
 
     return (
         <div className="todo">
-            {todos.length === 0 && <p className="todo__placeholder">Добавь свои планы...</p>}
-            {isAddButtonActive && <form className="todo__form" onSubmit={handleSubmit} >
-                <input type="text" className="todo__input" placeholder='Запланируй что-нибудь' onChange={handlechange} value={todoInput} required />
-            </form>}
+            {Object.keys(todos).length === 0 && <p className="todo__placeholder">Добавь свои планы...</p>}
+            <form className="todo__form" onSubmit={handleSubmit} >
+                <CSSTransition unmountOnExit in={isAddButtonActive} nodeRef={inputRef} timeout={300} classNames="todo__smooth">
+                <input ref={inputRef} type="text" className="todo__input" placeholder='Запланируй что-нибудь' onChange={handlechange} value={todoInput} required />
+                </CSSTransition>
+            </form>
             <div className="todo__box-button">
                 <button className={`todo__add-button ${isAddButtonActive && "todo__add-button_active"}`}
                     onClick={handleAddClick}></button>
@@ -100,24 +106,30 @@ function ToDoList() {
                     onClick={handleComplateClick}></button>
             </div>
             <div className="todo__added-input-box">
-                {Object.keys(todos).map((id) =>
-                    <div className='todo__one-input-box'>
-                        {isDeleteButtonActive && <img src={deleteButton} alt="Кнопка удаления задания" className="todo__delete-input" onClick={() => handleDeleteInput(id)} />}
-                        <input type="text"
-                            maxLength={30}
-                            key={id}
-                            className={`todo__added-input ${complatedInputs.hasOwnProperty(id) ? 'todo__added-input_through' : ''}`}
-                            onChange={(evt) => handleEditTodo(evt, id)}
-                            value={todos[id]}
-                            wrap="hard"
-                            disabled={complatedInputs.hasOwnProperty(id)}
-                        />
-                        {isComplateButtonActive && <img src={complateButton}
-                            alt="Кнопка выполнения задания"
-                            className='todo__complate-input'
-                            onClick={() => handleComplateInput(id)} />}
-                    </div>)}
+                <TransitionGroup>
+                    {Object.keys(todos).map((id) => {
+                    const nodeRef = createRef();
+                    return (
+                        <CSSTransition key={id} nodeRef={nodeRef} timeout={300} classNames="todo__smooth">
+                            <div ref={nodeRef} className='todo__one-input-box'>
+                                {isDeleteButtonActive && <img src={deleteButton} alt="Кнопка удаления задания" className="todo__delete-input" onClick={() => handleDeleteInput(id)} />}
+                                <input type="text"
+                                    maxLength={30}
+                                    className={`todo__added-input ${complatedInputs.hasOwnProperty(id) ? 'todo__added-input_through' : ''}`}
+                                    onChange={(evt) => handleEditTodo(evt, id)}
+                                    value={todos[id]}
+                                    disabled={complatedInputs.hasOwnProperty(id)}
+                                />
+                                {isComplateButtonActive && <img src={complateButton}
+                                    alt="Кнопка выполнения задания"
+                                    className='todo__complate-input'
+                                    onClick={() => handleComplateInput(id)} />}
+                            </div>
+                        </CSSTransition>
+                    )})}
+                </TransitionGroup>
             </div>
+
         </div>
     );
 }

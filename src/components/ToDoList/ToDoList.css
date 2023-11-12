@@ -32,23 +32,24 @@
     border: none;
     top: 160px;
     left: 160px;
-    transition: 0.2s ease all;
+    transition: .35s cubic-bezier(.5,-0.93,.6,2.07) all;
     transform: rotate(180deg);
     opacity: 0;
 }
 
-
-
 .todo__add-button {
     background-image: url(../../images/add.png);
+    cursor: pointer;
 }
 
 .todo__delete-button {
     background-image: url(../../images/delete.png);
+    cursor: pointer;
 }
 
 .todo__complate-button {
     background-image: url(../../images/complate.png);
+    cursor: pointer;
 }
 
 .todo:hover .todo__add-button {
@@ -71,12 +72,17 @@
 
 .todo__add-button:hover,
 .todo__delete-button:hover,
-.todo__complate-button:hover,
+.todo__complate-button:hover {
+    opacity: .9 !important;
+    transition: .2s all ease;
+}
+
 .todo__delete-button_active,
 .todo__add-button_active,
 .todo__complate-button_active {
+    transform: scale(1.1) !important;
     opacity: .9 !important;
-    transform: scale(1.05) !important;
+    transition: .2s all ease;
 }
 
 .todo__add-button_active {
@@ -84,11 +90,11 @@
 }
 
 .todo__delete-button_active {
-    left: -80px
+    left: -80px;
 }
 
 .todo__complate-button_active {
-    left: 400px
+    left: 400px;
 }
 
 .todo__form {
@@ -161,8 +167,31 @@
 .todo__delete-input:hover,
 .todo__complate-input:hover {
     opacity: 1;
+    transform: scale(1.1);
 }
 
 .todo__added-input_through {
     text-decoration: line-through;
+    transition: all 300ms;
+}
+
+.todo__smooth-enter {
+    opacity: 0;
+    transform: scale(.9);
+}
+
+.todo__smooth-enter-active {
+    opacity: 1;
+    transform: scale(1);
+    transition: all 300ms;
+}
+
+.todo__smooth-exit {
+    opacity: 1;
+}
+
+.todo__smooth-exit-active {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: all 300ms;
 }
