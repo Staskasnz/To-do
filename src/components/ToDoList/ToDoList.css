@@ -32,7 +32,7 @@
     border: none;
     top: 160px;
     left: 160px;
-    transition: .35s cubic-bezier(.5,-0.93,.6,2.07) all;
+    transition: .2s ease all;
     transform: rotate(180deg);
     opacity: 0;
 }
