@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/To-do/static/css/main.b555699d.css",
-    "main.js": "/To-do/static/js/main.e623fc62.js",
+    "main.css": "/To-do/static/css/main.178a0202.css",
+    "main.js": "/To-do/static/js/main.66ca911b.js",
     "static/media/LichtePostBusPro.ttf": "/To-do/static/media/LichtePostBusPro.f39f428dbfe10794d9d6.ttf",
     "static/media/Inter-Medium.woff2": "/To-do/static/media/Inter-Medium.293fd13dbca5a3e450ef.woff2",
     "static/media/Inter-Black.woff2": "/To-do/static/media/Inter-Black.15ca31c0a2a68f76d2d1.woff2",
     "static/media/Inter-Regular.woff2": "/To-do/static/media/Inter-Regular.c8ba52b05a9ef10f4758.woff2",
-    "static/media/complate-button.png": "/To-do/static/media/complate-button.1e2db174bf9552fd048d.png",
-    "static/media/delete-button.png": "/To-do/static/media/delete-button.3f4ab66af00b3492f85d.png",
     "static/media/off.png": "/To-do/static/media/off.d8ed836a90ce86d80be8.png",
+    "static/media/complate-button.png": "/To-do/static/media/complate-button.60e2b58d45f16c18cc18.png",
+    "static/media/delete-button.png": "/To-do/static/media/delete-button.1c4bd1bf32c591465e45.png",
     "index.html": "/To-do/index.html",
-    "main.b555699d.css.map": "/To-do/static/css/main.b555699d.css.map",
-    "main.e623fc62.js.map": "/To-do/static/js/main.e623fc62.js.map"
+    "main.178a0202.css.map": "/To-do/static/css/main.178a0202.css.map",
+    "main.66ca911b.js.map": "/To-do/static/js/main.66ca911b.js.map"
   },
   "entrypoints": [
-    "static/css/main.b555699d.css",
-    "static/js/main.e623fc62.js"
+    "static/css/main.178a0202.css",
+    "static/js/main.66ca911b.js"
   ]
 }
